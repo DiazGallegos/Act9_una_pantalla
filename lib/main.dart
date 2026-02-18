@@ -99,7 +99,45 @@ class MainHomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           _buildBanner(),
-          const SizedBox(height: 20),
+          const SizedBox(height: 24),
+          
+          // SECCIÓN DE OFERTAS
+          const Text(
+            "Ofertas",
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.w900,
+              color: Colors.white,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                "ALL OFFERS",
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: bkOrange,
+                  letterSpacing: 1.2,
+                ),
+              ),
+              Row(
+                children: const [
+                  Text(
+                    "FAVORITOS",
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(width: 4),
+                  Icon(Icons.favorite, color: Colors.red, size: 20),
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+
+          // GRID DE PRODUCTOS
           GridView.count(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -130,7 +168,6 @@ class MainHomeScreen extends StatelessWidget {
     );
   }
 
-  // Se movieron las funciones DENTRO de la clase MainHomeScreen
   Widget _buildBanner() {
     return Container(
       padding: const EdgeInsets.all(20),
